@@ -1,4 +1,6 @@
-### goTcpProxy 
+[![Build Status](https://travis-ci.org/zheng-ji/goTcpProxy.svg)](https://travis-ci.org/zheng-ji/goTcpProxy)
+
+## goTcpProxy 
 
 ----
 
