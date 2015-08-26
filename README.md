@@ -2,8 +2,6 @@
 
 ## goTcpProxy 
 
-----
-
 A Tcp Proxy Server Written By Go
 
 ### Description
@@ -28,6 +26,5 @@ Usage of ./pass:
 ```
 
 ----
-
 MIT LICENSE
 
