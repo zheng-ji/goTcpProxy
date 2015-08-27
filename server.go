@@ -16,8 +16,8 @@ import (
 var (
 	src          = flag.String("src", "127.0.0.1:8999", "proxy server's host.")
 	dest         = flag.String("dest", "172.16.1.250:3306", "where proxy server forward requests to.")
-	maxConn      = flag.Int("max_avail_conn", 25, "max active connection.")
-	maxWaitQueue = flag.Int("max_wait_conn", 10000, "max connections in the queue wait for servers.")
+	maxConn      = flag.Int("n", 25, "max active connection.")
+	maxWaitQueue = flag.Int("c", 10000, "max connections in the queue wait for servers.")
 	expire       = flag.Int("ttl", 20, "timeout of read and write")
 )
 
