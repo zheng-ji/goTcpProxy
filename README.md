@@ -34,6 +34,8 @@ Usage of ./goTcpProxy:
 ./goTcpProxy -src="127.0.0.1:8999" -dest="172.16.1.250:3306"
 ```
 
-----
-MIT LICENSE
+License
+-------
+
+Copyright (c) 2015 released under a MIT style license.
 
