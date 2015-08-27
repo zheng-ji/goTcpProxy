@@ -15,7 +15,6 @@ A Tcp Proxy Server Written By Go
 ```
 cd $GOPATH;
 git clone http://github.com/zheng-ji/goTcpProxy;
-cd src;
 make
 ```
 
