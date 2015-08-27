@@ -10,10 +10,19 @@ A Tcp Proxy Server Written By Go
 * support catching exit signal 
 * support customize Your connect Params such as `max_avail_conn`, `ttl`
 
+### How To Compile
+
+```
+cd $GOPATH;
+git clone http://github.com/zheng-ji/goTcpProxy;
+cd src;
+make
+```
+
 ### How To Use
 
 ```
-Usage of ./pass:
+Usage of ./goTcpProxy:
     -dest="172.16.1.250:3306": where proxy server forward requests to.
     -max_avail_conn=25: max active connection.
     -max_wait_conn=10000: max connections in the queue wait for servers.
@@ -22,7 +31,7 @@ Usage of ./pass:
 ```
 
 ```
-./pass -src="127.0.0.1:8999" -dest="172.16.1.250:3306"
+./goTcpProxy -src="127.0.0.1:8999" -dest="172.16.1.250:3306"
 ```
 
 ----
