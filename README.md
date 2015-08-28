@@ -8,7 +8,7 @@ A Tcp Proxy Server Written By Go
 
 * support tcp proxy
 * support catching exit signal 
-* support customize Your connect Params such as `max_avail_conn`, `ttl`
+* support customize Your connect Params such as `dest` `src` `c`, `n` `ttl`
 
 ### How To Compile
 
