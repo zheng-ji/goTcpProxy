@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/zheng-ji/goTcpProxy.svg)](https://travis-ci.org/zheng-ji/goTcpProxy)
-
 ## goTcpProxy 
 
 A Tcp Proxy Server Written By Go
@@ -19,17 +17,10 @@ A Tcp Proxy Server Written By Go
 * 支持一致性哈希的负载均衡
 * 自动检测失败的后端服务器，并移除
 
-### How To Compile
-
-```
-cd $GOPATH;
-git clone http://github.com/zheng-ji/goTcpProxy;
-make
-```
 
 ### How To Use
 
-`config.yaml` 配置
+#### `config.yaml` 详解
 
 ```
 bind: 0.0.0.0:9999  // 代理服务监听端口
@@ -40,12 +31,20 @@ failover: 3         // 后端服务允许失败次数
 backend:            // 后端服务列表
     - 127.0.0.1:80
     - 127.0.0.1:81
-
 log:
     level: "info"
     path: "/Users/zj/proxy.log"
 ```
 
+#### Compile
+
+```
+cd $GOPATH;
+git clone http://github.com/zheng-ji/goTcpProxy;
+make
+```
+
+#### Run 
 ```
 ./goTcpProxy -c=etc/config.yaml
 ```
