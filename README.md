@@ -20,7 +20,7 @@ A Tcp Proxy Server Written By Go
 
 ### How To Use
 
-#### `config.yaml` 详解
+#### 配置详解
 
 ```
 bind: 0.0.0.0:9999  // 代理服务监听端口
