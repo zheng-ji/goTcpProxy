@@ -1,6 +1,8 @@
 all: compile
 
 compile:
-		go build . 
+		go build .;
+
 clean:
-		go clean
+		go clean;
+

@@ -1,0 +1,12 @@
+bind: 0.0.0.0:9999
+wait_queue_len: 100
+max_conn: 50
+timeout: 5
+failover: 3
+backend:
+    - 127.0.0.1:80
+    - 127.0.0.1:81
+
+log:
+    level: "info"
+    path: "/Users/zj/proxy.log"
