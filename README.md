@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/zheng-ji/goTcpProxy.svg)](https://travis-ci.org/zheng-ji/goTcpProxy)
-
 ## goTcpProxy 
 
 A Tcp Proxy Server Written By Go
@@ -31,7 +29,7 @@ make
 
 ### How To Use
 
-`config.yaml` 配置
+config.yaml 配置
 
 ```
 bind: 0.0.0.0:9999      // 代理服务监听端口
