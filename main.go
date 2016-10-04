@@ -41,13 +41,18 @@ func main() {
 		return
 	}
 
+	// init logger server
 	initLogger()
 
-	pLog.Info("start proxy")
-
+	// init Backend server
 	initBackendSvrs(pConfig.Backend)
 
 	go onExitSignal()
 
+	// init status service
+	initStats()
+
+	// init proxy service
 	initProxy()
+
 }
