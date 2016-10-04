@@ -3,10 +3,10 @@
 package main
 
 import (
-	"errors"
+	//"errors"
+	"fmt"
 	"io/ioutil"
 	"launchpad.net/goyaml"
-	"os"
 )
 
 type ProxyConfig struct {
@@ -17,6 +17,7 @@ type ProxyConfig struct {
 	FailOver     int       `yaml:failover`
 	Backend      []string  `yaml:"backend"`
 	Log          LogConfig `yaml:"log"`
+	Stats        string    `yaml:stats`
 }
 
 type LogConfig struct {
@@ -24,35 +25,14 @@ type LogConfig struct {
 	Path  string `yaml:"path"`
 }
 
-func (lc *LogConfig) isValid() bool {
-	_, err := os.Stat(lc.Path)
-	return err == nil || os.IsExist(err)
-}
-
 func parseConfigFile(filepath string) error {
 	if config, err := ioutil.ReadFile(filepath); err == nil {
 		if err = goyaml.Unmarshal(config, &pConfig); err != nil {
 			return err
 		}
-		if pConfig.isValid() == false {
-			err := errors.New("wrong config")
-			return err
-		}
-		if pConfig.FailOver <= 0 {
-			pConfig.FailOver = 5
-		}
-		if pConfig.MaxConn <= 0 {
-			pConfig.MaxConn = 5
-		}
-		if pConfig.Timeout <= 0 {
-			pConfig.Timeout = 5
-		}
+		fmt.Println(pConfig)
 	} else {
 		return err
 	}
 	return nil
-}
-
-func (pc *ProxyConfig) isValid() bool {
-	return len(pc.Backend) > 0 && pc.Log.isValid()
 }
