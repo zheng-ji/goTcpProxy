@@ -11,6 +11,7 @@ A Tcp Proxy Server Written By Go
 * Supprot multi backend severs 
 * Consistent Hash Load Balance
 * Auto detect down server, and remove it.
+* Monitor backend health status
 
 #### 中文
 
@@ -18,6 +19,7 @@ A Tcp Proxy Server Written By Go
 * 后端支持多个服务器
 * 支持一致性哈希的负载均衡
 * 自动检测失败的后端服务器，并移除
+* 后端服务的健康检查接口
 
 ### How To Compile
 
