@@ -2,8 +2,7 @@
 
 A Tcp Proxy Server Written By Go
 
-![tcpproxylogo](https://cloud.githubusercontent.com/assets/1414745/19109283/2de63ff8-8b27-11e6-9f35-32472b8f83c3.png)
-
+![smailltcp](https://cloud.githubusercontent.com/assets/1414745/19109352/96740f8c-8b27-11e6-87af-257acbde560b.jpg)
 ### Description
 
 #### English
