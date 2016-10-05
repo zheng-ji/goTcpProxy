@@ -3,8 +3,7 @@
 package main
 
 import (
-	//"errors"
-	"fmt"
+	//"fmt"
 	"io/ioutil"
 	"launchpad.net/goyaml"
 )
@@ -13,11 +12,11 @@ type ProxyConfig struct {
 	Bind         string    `yaml:"bind"`
 	WaitQueueLen int       `yaml:"wait_queue_len"`
 	MaxConn      int       `yaml:"max_conn"`
-	Timeout      int       `yaml:timeout`
-	FailOver     int       `yaml:failover`
+	Timeout      int       `yaml:"timeout"`
+	FailOver     int       `yaml:"failover"`
 	Backend      []string  `yaml:"backend"`
 	Log          LogConfig `yaml:"log"`
-	Stats        string    `yaml:stats`
+	Stats        string    `yaml:"stats"`
 }
 
 type LogConfig struct {
@@ -30,7 +29,6 @@ func parseConfigFile(filepath string) error {
 		if err = goyaml.Unmarshal(config, &pConfig); err != nil {
 			return err
 		}
-		fmt.Println(pConfig)
 	} else {
 		return err
 	}

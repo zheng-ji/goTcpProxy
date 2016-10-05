@@ -29,7 +29,7 @@ make
 
 ### How To Use
 
-config.yaml 配置
+配置文件详解
 
 ```
 bind: 0.0.0.0:9999      // 代理服务监听端口
@@ -48,13 +48,10 @@ log:
 
 ```
 // 运行服务
-./goTcpProxy -c=etc/config.yaml
-
-// 查看后端服务健康状态
-curl 127.0.0.1:19999/stats 
-Server:127.0.0.1:80 FailTimes:9 isUp:false
-Server:127.0.0.1:81 FailTimes:0 isUp:true
+./goTcpProxy -c=etc/conf.yaml
 ```
+
+![gotcpproxy](https://cloud.githubusercontent.com/assets/1414745/19108379/353e7de6-8b23-11e6-9144-9decdd78de54.png)
 
 License
 -------

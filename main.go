@@ -4,7 +4,7 @@ package main
 
 import (
 	"flag"
-	//"fmt"
+	"fmt"
 	"github.com/Sirupsen/logrus"
 	"log"
 	"os"
@@ -15,7 +15,7 @@ import (
 var (
 	pConfig    ProxyConfig
 	pLog       *logrus.Logger
-	configFile = flag.String("c", "etc/conf.yml", "配置文件，默认etc/conf.yml")
+	configFile = flag.String("c", "etc/conf.yaml", "配置文件，默认etc/conf.yaml")
 )
 
 func onExitSignal() {
@@ -36,6 +36,7 @@ L:
 func main() {
 
 	flag.Parse()
+	fmt.Println("Start Proxy...")
 
 	if parseConfigFile(*configFile) != nil {
 		return

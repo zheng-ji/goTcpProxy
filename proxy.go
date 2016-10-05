@@ -9,7 +9,7 @@ import (
 
 func initProxy() {
 
-	pLog.Infof("Proxying %s->%s.\n", pConfig.Bind, pConfig.Backend)
+	pLog.Infof("Proxying %s -> %s\n", pConfig.Bind, pConfig.Backend)
 
 	server, err := net.Listen("tcp", pConfig.Bind)
 	if err != nil {
