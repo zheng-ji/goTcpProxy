@@ -1,6 +1,6 @@
 ## goTcpProxy 
 
-A Tcp Proxy Server Written By Go
+一个支持负载均衡，健康检查的 TcpProxy 
 
 ![smailltcp](https://cloud.githubusercontent.com/assets/1414745/19109474/2eea5e56-8b28-11e6-80ba-be5ed9117f9e.jpg)
 
