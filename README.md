@@ -51,7 +51,7 @@ log:
 ./goTcpProxy -c=etc/conf.yaml
 ```
 
-![gotcpproxy](https://cloud.githubusercontent.com/assets/1414745/19108379/353e7de6-8b23-11e6-9144-9decdd78de54.png)
+![gotcp](https://cloud.githubusercontent.com/assets/1414745/19108922/68eeab00-8b25-11e6-903a-864a19e2d9c5.png)
 
 License
 -------
