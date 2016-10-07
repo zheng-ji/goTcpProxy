@@ -95,7 +95,7 @@ func pass(from net.Conn, to net.Conn, complete chan bool, one_side chan bool, ot
 				return
 			}
 
-			to.SetReadDeadline(time.Now().Add(time.Duration(pConfig.Timeout) * time.Second))
+			to.SetWriteDeadline(time.Now().Add(time.Duration(pConfig.Timeout) * time.Second))
 			_, err = to.Write(bytes[:read])
 			if err != nil {
 				complete <- true
