@@ -8,6 +8,7 @@ import (
 	"launchpad.net/goyaml"
 )
 
+// ProxyConfig Type
 type ProxyConfig struct {
 	Bind         string    `yaml:"bind"`
 	WaitQueueLen int       `yaml:"wait_queue_len"`
@@ -19,6 +20,7 @@ type ProxyConfig struct {
 	Stats        string    `yaml:"stats"`
 }
 
+// LogConfig Type
 type LogConfig struct {
 	Level string `yaml:"level"`
 	Path  string `yaml:"path"`

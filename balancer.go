@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// BackendSvr Type
 type BackendSvr struct {
 	svrStr    string
 	isUp      bool // is Up or Down
@@ -35,8 +36,8 @@ func initBackendSvrs(svrs []string) {
 }
 
 func getBackendSvr(conn net.Conn) (*BackendSvr, bool) {
-	remote_addr := conn.RemoteAddr().String()
-	svr, _ := pConsisthash.Get(remote_addr)
+	remoteAddr := conn.RemoteAddr().String()
+	svr, _ := pConsisthash.Get(remoteAddr)
 
 	bksvr, ok := pBackendSvrs[svr]
 	return bksvr, ok

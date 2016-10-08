@@ -57,31 +57,31 @@ func handleConnection(connection net.Conn) {
 
 	if err != nil {
 		pLog.Error(err)
-		bksvr.failTimes += 1
+		bksvr.failTimes++
 		return
 	}
 
 	//等待双向连接完成
 	complete := make(chan bool, 2)
-	one_side := make(chan bool, 1)
-	other_side := make(chan bool, 1)
-	go pass(connection, remote, complete, one_side, other_side)
-	go pass(remote, connection, complete, other_side, one_side)
+	oneSide := make(chan bool, 1)
+	otherSide := make(chan bool, 1)
+	go pass(connection, remote, complete, oneSide, otherSide)
+	go pass(remote, connection, complete, otherSide, oneSide)
 	<-complete
 	<-complete
 	remote.Close()
 }
 
 // copy Content two-way
-func pass(from net.Conn, to net.Conn, complete chan bool, one_side chan bool, other_side chan bool) {
-	var err error = nil
-	var bytes []byte = make([]byte, 256)
-	var read int = 0
+func pass(from net.Conn, to net.Conn, complete chan bool, oneSide chan bool, otherSide chan bool) {
+	var err error
+	var read int
+	bytes := make([]byte, 256)
 
 	for {
 		select {
 
-		case <-other_side:
+		case <-otherSide:
 			complete <- true
 			return
 
@@ -91,7 +91,7 @@ func pass(from net.Conn, to net.Conn, complete chan bool, one_side chan bool, ot
 			read, err = from.Read(bytes)
 			if err != nil {
 				complete <- true
-				one_side <- true
+				oneSide <- true
 				return
 			}
 
@@ -99,7 +99,7 @@ func pass(from net.Conn, to net.Conn, complete chan bool, one_side chan bool, ot
 			_, err = to.Write(bytes[:read])
 			if err != nil {
 				complete <- true
-				one_side <- true
+				oneSide <- true
 				return
 			}
 		}
