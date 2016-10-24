@@ -9,4 +9,4 @@ backend:
     - 127.0.0.1:84
 log:
     level: "info"
-    path: "/home/zj/proxy.log"
+    path: "/home/zj/log/proxy.log"
